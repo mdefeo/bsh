@@ -49,7 +49,7 @@
             </nav>
             -->
             <div class="gh-head-actions">
-                {{#unless @site.members_enabled}}
+                {{#unless @site.members_enabled}}Hello
                     {{^match @custom.navigation_layout "Stacked"}}
                         <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{/match}}
@@ -74,7 +74,7 @@
 
     <div class="site-content">
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
-        Hello{{{body}}}
+        {{{body}}}
     </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
