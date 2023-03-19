@@ -14,3 +14,6 @@ jobs:
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+           image: mdefeo/bsh:latest
+           settings:
+            host: https://broad-street-hockey.ghost.io
