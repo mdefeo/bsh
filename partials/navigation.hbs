@@ -1,0 +1,57 @@
+{{#if isSecondary}}
+    <ul class="footer-nav" role="menu">
+        {{#foreach navigation}}
+              <li class="nav-{{slug}}" role="menuitem">
+                <a href="{{url}}">
+                    <i class="bx bx-chevron-right"></i> 
+                    {{label}}
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <ul>
+        <li class="dropdown"><a href="#"><span>News</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><a href="/morning-fly-by">Morning Fly By</a></li>
+                <li><a href="/prospect-report">Prospect Report</a></li>
+                <li><a href="/news-reports">News Reports</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#"><span>Games</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><a href="/game-threads">Game Threads</a></li>
+                <li><a href="/previews">Previews</a></li>
+                <li><a href="/recaps">Recaps</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#"><span>Features</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><a href="/flyers">Flyers</a></li>
+                <li><a href="/prospects">Prospects</a></li>
+                <li><a href="/sports-betting">Sports Betting</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#"><span>Podcasts</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><a href="/flyers">Flyers</a></li>
+                <li><a href="/bsh-radio">BSH Radio</a></li>
+                <li><a href="/flyperbole">Flyperbole</a></li>
+            </ul>
+        </li>
+        <li><a class="" href="/everything-is-sports">Everything Is Sports</a></li>
+        <li><a class="" href="/bsh-store">BSH Store</a></li>
+    </ul>
+
+{{!--  
+    <div class="c-global-header__links">
+        <ul class="nav" role="menu">
+            <!-- Loop through the navigation items -->
+            {{#foreach navigation}}
+            <li class="c-global-header__link nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+            <!-- End the loop -->
+        </ul>
+    </div>
+--}}
+{{/if}}

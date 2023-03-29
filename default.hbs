@@ -8,10 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="{{asset "built/main.bundle.js"}}"></script>
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
+    <link href="{{asset "built/aos.css"}}" rel="stylesheet">
+    <link href="{{asset "built/bootstrap.min.css"}}" rel="stylesheet">
+    <link href="{{asset "built/bootstrap-icons.css"}}" rel="stylesheet">
+    <link href="{{asset "built/boxicons.min.css"}}" rel="stylesheet">
+    <link href="{{asset "built/glightbox.min.css"}}" rel="stylesheet">
+    <link href="{{asset "built/remixicon.css"}}" rel="stylesheet">
+    <link href="{{asset "built/swiper-bundle.min.css"}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset "built/mdb.min.css"}}" />
+    <link rel="stylesheet" href="{{asset "built/chorus.css"}}" />
+    <link rel="stylesheet" href="{{asset "built/hub_pages.css"}}" />
+
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
@@ -20,98 +30,113 @@
 
 </head>
 <body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
-<div class="viewport">
+<main>
 
-    <header id="gh-head" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
-        <div class="gh-head-inner inner">
-            <div class="gh-head-brand">
-                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}">
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                <button class="gh-burger"></button>
-            </div>
+    <header id="header" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
+        <div class="container d-flex align-items-center gh-head-inner inner">
             
-            <div id="navbar"></div>    
-
-            <!--
-            <nav class="gh-head-menu">
+            <nav id="navbar" class="navbar gh-head-menu">
+                <div class="logo-wrapper">
+                    <a class="logo me-auto gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                        {{#if @site.logo}}
+                            <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
+                        {{else}}
+                            {{@site.title}}
+                        {{/if}}
+                    </a>
+                    <span>Philadelphia Flyers Schedule, Roster, News, and Rumors | Broad Street Hockey</span>
+                </div>
                 {{navigation}}
                 {{#unless @site.members_enabled}}
                     {{#match @custom.navigation_layout "Stacked"}}
                         <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
                     {{/match}}
                 {{/unless}}
-            </nav>
-            -->
-            <div class="gh-head-actions">
-                {{#unless @site.members_enabled}}Hello
-                    {{^match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{else}}
-                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    <div class="gh-head-members">
-                        {{#unless @member}}
-                            {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                            {{else}}
-                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
-                            {{/unless}}
-                        {{else}}
-                            <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
-                        {{/unless}}
-                    </div>
-                {{/unless}}
-            </div>
+                <div class="gh-head-brand">
+                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                    <button class="gh-burger"></button>
+                </div>
+            </nav>    
         </div>
     </header>
 
-    <div class="site-content">
+    <div class="container py-4 site-content">
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+        <main class="my-5">
+            <div class="container">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-9 mb-4">
+                        <!--Section: Content-->
+                        <section class="latest-content">
+                            {{{body}}}
+                        </section>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <!--Section: Sidebar-->
+                        {{> sidebar heading="Latest"}}
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
     </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-        <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
-        </div>
-    </footer>
 
-</div>
+
+  <footer id="footer" class="site-footer outer">
+      
+    <div class="footer-top inner">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}} logo me-auto" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links secondary-navigation">
+            {{navigation type="secondary"}}
+          </div>
+
+          <div class="col-lg6 col-md-6 footer-links">
+            <p>Gambling Problem? Call (800) 327-5050 or visit gamblinghelpline.ma.org (MA), Call 877-8-HOPENY/text HOPENY (467369) (NY),</p>                
+            <p>If you or someone you know has a gambling problem, crisis counseling and referral services can be accessed by calling 1-800-GAMBLER (1-800-426-2537) (CO / IL / IN / LA / MD / MI / NJ / OH / PA / TN / WV / WY), 1-800-NEXT STEP (AZ), 1-800-522-4700 (KS / NH), 888-789-7777/visit ccpg.org (CT), 1-800-BETS OFF (IA), visit OPGR.org (OR), or 1-888-532-3500 (VA).</p>
+            <p>Odds and lines subject to change. 21+ (18+ NH/WY). Physically present in AZ / CO / CT / IL / IN / IA / KS / LA (select parishes) / MA / MD / MI / NH / NJ / NY / OH / OR / PA / TN / VA / WV / WY only. Void in ONT. Eligibility restrictions apply. See terms at draftkings.com/sportsbook. On behalf of Boot Hill Casino & resort (KS).</p>
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <section class="copyright text-right"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}} All Rights Reserved.</section>
+                    </div>
+                </div>
+
+
+          </div>    
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <div id="preloader"></div>
+
+</main>
 {{!-- /.viewport --}}
 
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
-<script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous">
-</script>
-<script src="{{asset "built/casper.js"}}"></script>
-<script>
-$(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
-        $('body').toggleClass('gh-head-open');
-    });
-    // FitVids - Makes video embeds responsive
-    $(".gh-content").fitVids();
-});
-</script>
+<script src="{{asset "built/init.js"}}"></script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 
 </body>
 </html>
+ 

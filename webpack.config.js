@@ -1,10 +1,8 @@
 const path = require('path');
-
+var webpack = require('webpack');  
+var autoprefixer = require('autoprefixer');
 module.exports = {
     mode: 'development',
-    entry: {
-        main: "./react/src/app.jsx",
-    },
     module: {
         rules: [
             {
@@ -19,12 +17,25 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                use: ['style-loader', 'css-loader', 'postcss']
             },
             {
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
+            {
+                test: /\.(ttf|eot|woff)(\?.*)?$/,
+                use: ['url']
+            },
+            {
+                test: /\.(svg)(\?.*)?$/,
+                use: ['url', 'svgo']
+            },
+            {
+                test: /\.html$/,
+                use: ['html']
+            }
+
         ],
     },
     output: {

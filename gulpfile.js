@@ -11,7 +11,7 @@ const livereload = require('gulp-livereload');
 const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const uglify = require("gulp-terser");
 const beeper = require('beeper');
 const fs = require('fs');
 
@@ -48,7 +48,11 @@ function hbs(done) {
 
 function css(done) {
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
+        src([
+            'assets/css/*.css',
+            'assets/vendor/*.css',
+            'assets/vendor/*/*.css',
+        ], {sourcemaps: true}),
         postcss([
             easyimport,
             colorFunction(),
@@ -65,9 +69,11 @@ function js(done) {
         src([
             // pull in lib files first so our own code can depend on it
             'assets/js/lib/*.js',
+            'assets/vendor/*.js',
+            'assets/vendor/*/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
-        concat('casper.js'),
+        concat('init.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()

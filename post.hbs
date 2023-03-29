@@ -12,17 +12,6 @@ into the {body} tag of the default.hbs template --}}
 
     <header class="article-header gh-canvas">
 
-        <div class="article-tag post-card-tags">
-            {{#primary_tag}}
-                <span class="post-card-primary-tag">
-                    <a href="{{url}}">{{name}}</a>
-                </span>
-            {{/primary_tag}}
-            {{#if featured}}
-                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
-            {{/if}}
-        </div>
-
         <h1 class="article-title">{{title}}</h1>
 
         {{#if custom_excerpt}}
@@ -49,10 +38,26 @@ into the {body} tag of the default.hbs template --}}
             <div class="article-byline-meta">
                 <h4 class="author-name">{{authors}}</h4>
                 <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    <span class="c-byline__item">
+                        <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    </span>
                     {{#if reading_time}}
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        <span class="c-byline__item byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                     {{/if}}
+                    <span class="c-byline__item" data-talk-id="PAGE_IDENTIFIER"></span>
+                    <span class="article-tag post-card-tags">
+                        {{#primary_tag}}
+                            <span class="c-byline__item post-card-primary-tag">
+                                <a href="{{url}}">{{name}}</a>
+                            </span>
+                        {{/primary_tag}}
+                        {{#if featured}}
+                            <span class="c-byline__item post-card-featured">{{> "icons/fire"}} Featured</span>
+                        {{/if}}
+                    </span>
+
+
+
                 </div>
             </div>
 
@@ -86,55 +91,29 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{#if comments}}
         <section class="article-comments gh-canvas">
-            {{comments}}
+            <div id="hyvor-talk-view"></div>
         </section>
-    {{/if}}
 
 </article>
 </main>
 
-{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#if @site.members_enabled}}
-{{#unless @member}}
-{{#unless @site.comments_enabled}}
-{{#if access}}
-    <section class="footer-cta outer">
-        <div class="inner">
-            {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
-            <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
-            </a>
-        </div>
-    </section>
-{{/if}}
-{{/unless}}
-{{/unless}}
-{{/if}}
+
+<div class="c-related-list__video">
+    <div class="c-video-embed--media">
+        <iframe frameborder="no" src="https://playlist.megaphone.fm?p=VMP3107255052&amp;light=true" width="100%" height="482"></iframe>
+    </div>
+</div>
 
 
-{{!-- Read more links, just above the footer --}}
-{{#if @custom.show_recent_posts_footer}}
-    {{!-- The {#get} helper below fetches some of the latest posts here
-    so that people have something else to read when they finish this one.
-
-    This query gets the latest 3 posts on the site, but adds a filter to
-    exclude the post we're currently on from being included. --}}
-    {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
-
-        {{#if more_posts}}
-            <aside class="read-more-wrap outer">
-                <div class="read-more inner">
-                    {{#foreach more_posts}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                </div>
-            </aside>
-        {{/if}}
-
-    {{/get}}
-{{/if}}
+<script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 8652;
+    var HYVOR_TALK_CONFIG = {
+        url: "http://localhost:2368/",
+        id: "{{comment_id}}"
+    };
+</script>
+<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+<script async type="text/javascript" src="//talk.hyvor.com/web-api/count/"></script>
 
 {{/post}}
