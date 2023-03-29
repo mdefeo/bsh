@@ -9,7 +9,32 @@
     </header>
 
     {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+
       <div class="post-feed">
+        {{#foreach authors}}
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <article class="member d-flex align-items-start post-card {{#unless profile_image}} no-image{{/unless}}">
+              {{#if profile_image}}
+              <div class="pic"><img src="{{profile_image}}" class="img-fluid" alt=""></div>
+              {{/if}}
+              <div class="member-info">
+                <h4><a class="post-card-content-link" href="{{url}}">{{name}}</a></h4>
+                <span>{{location}}</span>
+                <p>{{bio}}</p>
+                <div class="social">
+                  <a href="{{twitter}}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{facebook}}"><i class="ri-facebook-fill"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        {{/foreach}}
+      </div>
+
+
+
+
+
         {{#foreach authors}}
           <article class="post-card {{#unless profile_image}} no-image{{/unless}}">
             {{#if profile_image}}
