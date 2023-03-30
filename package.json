@@ -44,7 +44,6 @@
         "url": "https://github.com/mdefeo/broadstreethockey.com.git"
     },
     "bugs": "https://github.com/mdefeo/broadstreethockey.com/issues",
-    "contributors": "https://github.com/mdefeo/broadstreethockey.com",
     "devDependencies": {
         "@babel/core": "^7.21.3",
         "@babel/preset-env": "^7.20.2",

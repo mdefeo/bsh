@@ -811,19 +811,21 @@ section {
 
 .c-entry-box--compact__body {
   padding: 16px;
-}
-.c-entry-box--compact__body {
   flex-grow: 1;
   padding: 0 8px;
   width: 70%;
+  padding: 16px;
 }
 
-.c-entry-box--compact__body {
-  padding: 16px;
+.c-entry-box--compact__body .latest-content h2 a {
+  font-weight: normal;
 }
 
 .latest-content h2 {
   text-align: left;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 .latest-content h2 a {
@@ -1566,8 +1568,6 @@ section {
   position: relative;
 }
 
-.row.display-flex {
-}
 .row.display-flex > [class*='col-'] {
   display: flex;
   flex-direction: column;
@@ -2219,7 +2219,8 @@ section {
 }
 
 ol.c-rock-list__items {
-  padding-left: 0
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .l-hero {
