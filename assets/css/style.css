@@ -2240,3 +2240,7 @@ ol.c-rock-list__items {
 .secondary-navigation {
   align-items: center;
 }
+
+.c-five-up__col:first-child .c-entry-box--compact .c-entry-box--compact__title, .c-five-up__col:first-child .c-entry-box--compact .c-entry-box--compact__title a {
+  font-size: 1.5em;
+}
