@@ -106,38 +106,38 @@ into the {body} tag of the default.hbs template --}}
 </div>
 
 <script type="text/javascript">
-    const crypto = require('crypto-js');
 
+    const BSH_DOMAIN = "http://localhost:2368";
     function hyvorTalkSignon(user) {
-        const HYVOR_TALK_SSO_PRIVATE_KEY = process.env.HYVOR_SSO_KEY; // this is not recommended. Use .env instead
+        const HYVOR_TALK_SSO_PRIVATE_KEY = "988bf47f56422d08b140ac8ae1142aff"; // this is not recommended. Use .env instead
 
-        const userData = Buffer.from(JSON.stringify(user)).toString('base64');
-        const hash = crypto.HmacSHA1(userData, HYVOR_TALK_SSO_PRIVATE_KEY).toString();
+        const userData = btoa(JSON.stringify(user));
+        const hash = HYVOR_TALK_SSO_PRIVATE_KEY;
 
         return {
             userData,
             hash
         }
     }
-
     const signon = hyvorTalkSignon({
         id: 1,
         name: 'Example User',
         email: "{email address}",
-        url: process.env.BSH_DOMAIN_STAGING
+        url: BSH_DOMAIN
     });
 
-    var HYVOR_TALK_WEBSITE = process.env.HYVOR_WEB_ID;
+    var HYVOR_TALK_WEBSITE = "8652";
     var HYVOR_TALK_CONFIG = {
-        url: process.env.BSH_DOMAIN,
+        url: BSH_DOMAIN,
         id: "{{comment_id}}",
         sso: {
             hash: signon.hash,
             userData: signon.userData,
-            loginURL: process.env.BSH_DOMAIN+"/#/portal/signin",
-            signupURL: process.env.BSH_DOMAIN+"/#/portal/signup"
+            loginURL: BSH_DOMAIN+"/#/portal/signin",
+            signupURL: BSH_DOMAIN+"/#/portal/signup"
         }
     };
+
 </script>
 <script async type="text/javascript" src="//talk.hyvor.com/web-api/count/"></script>
 

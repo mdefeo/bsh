@@ -19,7 +19,9 @@
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
+        "postship": "git fetch && gulp release",
+        "start": "ghost start",
+        "stop": "ghost stop"
     },
     "author": {
         "name": "Marcello De Feo",
@@ -84,6 +86,7 @@
         "style-loader": "^3.3.2",
         "webpack": "^5.76.2",
         "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.13.1",
         "webpack-stream": "^7.0.0"
     },
     "browserslist": [
@@ -196,6 +199,9 @@
         ]
     },
     "dependencies": {
-        "crypto-js": "^4.1.1"
+        "crypto-js": "^4.1.1",
+        "dotenv": "^16.0.3",
+        "dotenv-webpack": "^8.0.1",
+        "postcss-discard-duplicates": "^6.0.0"
     }
 }

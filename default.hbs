@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="{{asset "built/hub_pages.css"}}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
@@ -44,7 +43,7 @@
                             {{@site.title}}
                         {{/if}}
                     </a>
-                    <span>Philadelphia Flyers Schedule, Roster, News, and Rumors | Broad Street Hockey</span>
+                    <span>Friends don’t let friends experience Flyers hockey alone</span>
                 </div>
                 {{navigation}}
                 {{#unless @site.members_enabled}}
@@ -80,7 +79,7 @@
                     <div class="col-md-3 mb-4">
                         <!--Section: Sidebar-->
                         {{#is "home"}}
-                            {{> featured-sidebar heading="Featured"}}
+                            {{> featured-sidebar heading="Featured" filter="id:-{{id}}+tag:{{primary_tag.slug}}"}}
                         {{else post}}
                             {{> related-sidebar heading="Related"}}
                         {{else}}
@@ -104,25 +103,21 @@
         <div class="row">
 
           <div class="col-lg3 col-md-3 footer-contact">
-                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}} logo me-auto" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-<!--                <div class="col-lg6 col-md-6 footer-links secondary-navigation">
-                    {{navigation type="secondary"}}
-                </div>
--->
+            <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}} logo me-auto" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
           </div>
             <div class="col-lg2 col-md-2"></div>
           <div class="col-lg7 col-md-7 footer-links">
             <div class="row">
                  <div class="col-lg12 col-md-12 social-links">
-                    <a class="gh-head-button" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
-                    <span class="nav-envelope">
-                        <a href="mailto:info@broadstreethockey.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope">Email</i></a> 
+                    {{navigation type="secondary"}}
+                    <span class="nav-user">
+                        <a class="gh-head-button" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
                     </span>
                     <span class="nav-twitter">
                         <a href="https://twitter.com/BroadStHockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter">Twitter</i></a> 
