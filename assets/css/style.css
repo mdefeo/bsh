@@ -240,7 +240,7 @@ h6 {
   list-style: none;
   align-items: center;
   position: relative;
-  left: 0;
+  left: 100px;
 }
 
 .navbar li {
