@@ -868,6 +868,7 @@ section {
   line-height: normal;
   font-size: .75em;
   color: #666666;
+  margin-top: 10px;
 }
 
 .post .c-byline__item a {
@@ -2257,4 +2258,13 @@ ol.c-rock-list__items {
 
 .c-five-up__col:first-child .c-entry-box--compact .c-entry-box--compact__title, .c-five-up__col:first-child .c-entry-box--compact .c-entry-box--compact__title a {
   font-size: 1.5em;
+}
+
+.hero-post h2.c-entry-box--compact__title {
+  font-size: 2em;
+  margin: 0 0 .5em;
+}
+
+.hero-post .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__dek, .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__fanshot-content__description {
+  font-size: 1em;
 }
