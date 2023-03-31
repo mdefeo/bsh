@@ -2,7 +2,7 @@
     "name": "bsh",
     "description": "New front end for Broad Street Hockey, post Vox and based on the Casper theme.",
     "demo": "https://www.broadstreethockey.com/",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "engines": {
         "ghost": ">=5.0.0"
     },
