@@ -194,5 +194,8 @@
         "extends": [
             "@tryghost:theme"
         ]
+    },
+    "dependencies": {
+        "crypto-js": "^4.1.1"
     }
 }

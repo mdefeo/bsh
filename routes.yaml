@@ -49,6 +49,11 @@ collections:
     permalink: /prospects/{slug}/
     template: news
     filter: primary_tag:prospects
+  /everything-is-sports/:
+    permalink: /everything-is-sports/{slug}/
+    template: news
+    filter: primary_tag:everything-is-sports
+
 
   /podcasts/:
     permalink: /podcasts/{slug}/

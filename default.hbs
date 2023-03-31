@@ -65,7 +65,9 @@
         <main class="my-5"> 
             <div class="container">
                 <!--Top Story-->
-                {{> "hero"}}
+                {{#is "home"}}
+                    {{> "hero"}}
+                {{/is}}
                 <!--Grid row-->
                 <div class="row">
                     <!--Grid column-->
@@ -77,7 +79,13 @@
                     </div>
                     <div class="col-md-3 mb-4">
                         <!--Section: Sidebar-->
-                        {{> sidebar heading="Latest"}}
+                        {{#is "home"}}
+                            {{> featured-sidebar heading="Featured"}}
+                        {{else post}}
+                            {{> related-sidebar heading="Related"}}
+                        {{else}}
+                            {{> latest-sidebar heading="Latest"}}
+                        {{/is}}
                     </div>
 
                 </div>
