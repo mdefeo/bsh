@@ -240,7 +240,7 @@ h6 {
   list-style: none;
   align-items: center;
   position: relative;
-  left: 100px;
+  left: 0;
 }
 
 .navbar li {
@@ -252,7 +252,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  padding: 10px 0 10px 20px;
   font-size: 15px;
   font-weight: 500;
   color: #fff;
@@ -344,6 +344,7 @@ h6 {
   opacity: 1;
   top: 100%;
   visibility: visible;
+  display: table ;
 }
 
 .navbar .dropdown .dropdown ul {
@@ -2034,6 +2035,8 @@ section {
 
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
 }
 
 #footer .footer-top .footer-contact h3 {
@@ -2073,7 +2076,8 @@ section {
 #footer .footer-top .footer-links ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 0 20px;
+  margin: 0;
+  display: inline;
 }
 
 #footer .footer-top .footer-links ul i {
@@ -2081,12 +2085,14 @@ section {
   color: #fff;
   font-size: 18px;
   line-height: 1;
+  display: inline;
 }
 
 #footer .footer-top .footer-links ul li {
   padding: 10px 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  vertical-align: bottom;
 }
 
 #footer .footer-top .footer-links ul li:first-child {
@@ -2113,7 +2119,8 @@ section {
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
-  border-radius: 50%;
+  border-radius: 0;
+  border: none;
   text-align: center;
   width: 36px;
   height: 36px;
@@ -2125,6 +2132,13 @@ section {
   text-decoration: none;
 }
 
+#footer .footer-top .social-links a.gh-head-button, .gh-head-members a.gh-head-button {
+  background: transparent !important; 
+  border: none;
+}
+
+
+
 #footer .footer-bottom {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -2132,7 +2146,7 @@ section {
 }
 
 #footer .copyright {
-  float: left;
+  float: none;
 }
 
 #footer .credits {

@@ -270,14 +270,15 @@ production stylesheet in assets/built/screen.css
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 24px;
+    gap: 2px;
     list-style: none;
     text-align: right;
+    margin-left: 10%;
 }
 
 .gh-head-members {
     display: flex;
-    gap: 20px;
+    gap: 2px;
     align-items: center;
 }
 
@@ -340,6 +341,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-actions .gh-search {
     margin-right: -4px;
+    color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -2246,4 +2248,73 @@ html.dark-mode .footer-cta-title {
   .site-header-content h1,
 .site-header-content p {
     display: none;
+}
+
+.social-links .nav-facebook a,
+.social-links .nav-github a,
+.social-links .nav-instagram a,
+.social-links .nav-mastodon a,
+.social-links .nav-tiktok a,
+.social-links .nav-envelope a,
+.social-links .nav-twitter a {
+    background: transparent !important;
+  font-size: 0 !important;
+  margin: 20px 0;
+}
+.social-links .nav-facebook a::before,
+.social-links .nav-github a::before,
+.nav-instagram a::before,
+.social-links .nav-mastodon a::before,
+.social-links .nav-tiktok a::before,
+.social-links .nav-envelope a::before,
+.social-links .nav-twitter a::before {
+  font-family: "Font Awesome 6 Brands";
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 20px;
+}
+
+.social-links .nav-facebook a::before {
+    content: "\f09a";
+}
+.social-links .nav-github a::before {
+    content: "\f09b";
+}
+.social-links .nav-instagram a::before {
+    content: "\f16d";
+}
+.social-links .nav-mastodon a::before {
+    content: "\f4f6";
+ }
+ .social-links .nav-tiktok a::before {
+    content: "\e07b";
+}
+.social-links .nav-twitter a::before {
+    content: "\f099";
+}
+.social-links .nav-envelope a::before {
+    content: "\f0e0";
+}
+
+#footer .copyright {
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+#footer p {
+    margin-top: 20px;
+}
+
+#footer .footer-top .footer-links ul a {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#footer .footer-top .footer-links ul a .bx-chevron-right:before {
+    vertical-align: middle;
 }
