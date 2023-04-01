@@ -4,6 +4,11 @@ routes:
     permalink: /about/
     template: authors
 
+collections:
+  /post/:
+    permalink: /post/{slug}/
+    template: home
+
 taxonomies:
   tag: /tag/{slug}/
   author: /author/{slug}/
