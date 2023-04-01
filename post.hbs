@@ -11,8 +11,9 @@ into the {body} tag of the default.hbs template --}}
 <article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
 
     <header class="article-header gh-canvas">
-
-        <h1 class="article-title">{{title}}</h1>
+        <div class="section-title">
+           <h2>{{title}}</h2>
+        </div>
 
         {{#if custom_excerpt}}
             <p class="article-excerpt p-dek">{{custom_excerpt}}</p>
