@@ -1253,7 +1253,8 @@ h6 {
   }
   .c-compact-river__entry {
     background-color: #fff;
-    border-top: 1px solid #e7e7e7;
+    border-top: 1px solid #e85b31;
+    padding-top: 10px;
     margin-bottom: 8px;
   }
   
@@ -6383,10 +6384,7 @@ html.dark-mode .footer-cta-title {
         left: auto;
     }
 
-    .navbar-toggler {
-    }    
 }
-
 
 
 @media (min-width: 992px){
@@ -6419,4 +6417,10 @@ html.dark-mode .footer-cta-title {
 .navbar-expand-lg .navbar-collapse {
     left: 25px;
     position: relative;
+}
+
+.hero-post {
+    padding-bottom: 60px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e85b31;
 }

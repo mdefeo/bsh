@@ -55,7 +55,7 @@
                         <a href="{{primary_author.url}}">{{primary_author.name}}</a>
                     </span>
                     <span class="c-byline__item">
-                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                        <time datetime="{{date format="YYYY-MM-DD HH:mm:ss"}}">{{date}}</time>
                     </span>
                     {{#unless access}}
                     {{^has visibility="public"}}
@@ -74,10 +74,10 @@
 
 
                 {{#if reading_time}}
-                    <span class="post-card-meta-length">{{reading_time}}</span>
+                    <span class="byline__item post-card-meta-length">{{reading_time}}</span>
                 {{/if}}
                 {{#if @site.comments_enabled}}
-                    {{comment_count}}
+                    <span class="byline__item post-card-comment-count">{{comment_count}}</span>
                 {{/if}}
             </footer>
 
