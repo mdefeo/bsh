@@ -2173,6 +2173,12 @@ h6 {
   .hero-post h2.c-entry-box--compact__title {
     font-size: 2em;
     margin: 0 0 .5em;
+    text-align: left;
+  }
+
+
+  .hero-post h2.c-entry-box--compact__title:after, .hero-post h2.c-entry-box--compact__title:before,  .latest-content .section-title h2:after,   .latest-content .section-title h2:before {
+    display: none;
   }
   
   .hero-post .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__dek, .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__fanshot-content__description {
@@ -6459,4 +6465,24 @@ html.dark-mode .footer-cta-title {
 
 .gh-content .share-block a {
     text-decoration: none !important;
+}
+
+#footer .footer-top .social-links a {
+    font-size: 0;
+}
+
+.fa-user:before {
+    font-size: 18px;
+}
+
+.gh-head-link.gh-portal-close i, .gh-head-link.gh-portal-close i:before {
+    font-family: var(--fa-style-family,"Font Awesome 6 Free");
+}
+
+.gh-head-link.gh-portal-close i {
+    font-size: 0;
+}
+
+.gh-head-link.gh-portal-close i:before {
+    font-size: 18px;
 }
