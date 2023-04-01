@@ -1,8 +1,5 @@
-/* Import CSS reset and base styles */
 @import "global.css";
 
-/* Reset
-/* ---------------------------------------------------------- */
 
 html,
 body,
@@ -267,6 +264,104 @@ td,
 th {
     padding: 0;
 }
+
+
+:root {
+  
+    /* Colours */
+    --color-green: #a4d037;
+    --color-yellow: #fecd35;
+    --color-red: #f05230;
+    --color-darkgrey: #15171A;
+    --color-midgrey: #738a94;
+    --color-lightgrey: #f1f1f1;
+    --color-secondary-text: #979797;
+    --color-border: #e1e1e1;
+    --color-wash: #e5eff5;
+    --color-darkmode: #151719;
+
+    /*
+    An accent color is also set by Ghost itself in
+    Ghost Admin > Settings > Brand
+
+    --ghost-accent-color: {value};
+
+    You can use this variable throughout your styles
+     */
+
+    /* Fonts */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, serif;
+    --font-mono: Menlo, Courier, monospace;
+
+}
+
+
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
+.viewport {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex-grow: 1;
+}
+
+/* Full width page blocks */
+.outer {
+    position: relative;
+    padding: 0 max(4vmin, 20px);
+}
+
+/* Centered content container blocks */
+.inner {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+/* 3. Site Header
+/* ---------------------------------------------------------- */
+
+
+/* 4. Site Navigation
+/* ---------------------------------------------------------- */
+[class*="has_child"] { 
+    position: relative;
+}
+
+[class*="has_child"] a { 
+    font-family: "Druk Text Bold Web",Helvetica,sans-serif;
+    padding: 0 12px;
+    display: inline-block;
+    transition: color .1s,background-color .1s,fill .1s;
+    text-transform: uppercase;
+    columns: #fff;
+}
+
+[class*="has_child"] a::after { 
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f282";
+    box-sizing: border-box;
+    text-decoration: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;    
+}
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -679,6 +774,7 @@ h6 {
     top: 50%;
     transform: translate(-17%,-50%);
     z-index: 500;
+    left: 50px
   }
   
   #header .logo-wrapper span {
@@ -1454,453 +1550,6 @@ h6 {
   }
   
   /*--------------------------------------------------------------
-  # Why Us
-  --------------------------------------------------------------*/
-  .why-us .content {
-    padding: 60px 100px 0 100px;
-  }
-  
-  .why-us .content h3 {
-    font-weight: 400;
-    font-size: 34px;
-    color: #e85b31;
-  }
-  
-  .why-us .content h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 5px;
-  }
-  
-  .why-us .content p {
-    font-size: 15px;
-    color: #848484;
-  }
-  
-  .why-us .img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .why-us .accordion-list {
-    padding: 0 100px 60px 100px;
-  }
-  
-  .why-us .accordion-list ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .why-us .accordion-list li+li {
-    margin-top: 15px;
-  }
-  
-  .why-us .accordion-list li {
-    padding: 20px;
-    background: #fff;
-    border-radius: 4px;
-  }
-  
-  .why-us .accordion-list a {
-    display: block;
-    position: relative;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    padding-right: 30px;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .why-us .accordion-list span {
-    color: #c26144;
-    font-weight: 600;
-    font-size: 18px;
-    padding-right: 10px;
-  }
-  
-  .why-us .accordion-list i {
-    font-size: 24px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .why-us .accordion-list p {
-    margin-bottom: 0;
-    padding: 10px 0 0 0;
-  }
-  
-  .why-us .accordion-list .icon-show {
-    display: none;
-  }
-  
-  .why-us .accordion-list a.collapsed {
-    color: #343a40;
-  }
-  
-  .why-us .accordion-list a.collapsed:hover {
-    color: #c26144;
-  }
-  
-  .why-us .accordion-list a.collapsed .icon-show {
-    display: inline-block;
-  }
-  
-  .why-us .accordion-list a.collapsed .icon-close {
-    display: none;
-  }
-  
-  @media (max-width: 1024px) {
-  
-    .why-us .content,
-    .why-us .accordion-list {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    .why-us .img {
-      min-height: 400px;
-    }
-  
-    .why-us .content {
-      padding-top: 30px;
-    }
-  
-    .why-us .accordion-list {
-      padding-bottom: 30px;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    .why-us .img {
-      min-height: 200px;
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Skills
-  --------------------------------------------------------------*/
-  .skills .content h3 {
-    font-weight: 700;
-    font-size: 32px;
-    color: #e85b31;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .skills .content ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .skills .content ul li {
-    padding-bottom: 10px;
-  }
-  
-  .skills .content ul i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: #c26144;
-  }
-  
-  .skills .content p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .skills .progress {
-    height: 60px;
-    display: block;
-    background: none;
-    border-radius: 0;
-  }
-  
-  .skills .progress .skill {
-    padding: 0;
-    margin: 0 0 6px 0;
-    text-transform: uppercase;
-    display: block;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    color: #e85b31;
-  }
-  
-  .skills .progress .skill .val {
-    float: right;
-    font-style: normal;
-  }
-  
-  .skills .progress-bar-wrap {
-    background: #e8edf5;
-    height: 10px;
-  }
-  
-  .skills .progress-bar {
-    width: 1px;
-    height: 10px;
-    transition: 0.9s;
-    background-color: #4668a2;
-  }
-  
-  /*--------------------------------------------------------------
-  # Services
-  --------------------------------------------------------------*/
-  .services .icon-box {
-    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-    padding: 50px 30px;
-    transition: all ease-in-out 0.4s;
-    background: #fff;
-  }
-  
-  .services .icon-box .icon {
-    margin-bottom: 10px;
-  }
-  
-  .services .icon-box .icon i {
-    color: #c26144;
-    font-size: 36px;
-    transition: 0.3s;
-  }
-  
-  .services .icon-box h4 {
-    font-weight: 500;
-    margin-bottom: 15px;
-    font-size: 24px;
-  }
-  
-  .services .icon-box h4 a {
-    color: #e85b31;
-    transition: ease-in-out 0.3s;
-  }
-  
-  .services .icon-box p {
-    line-height: 24px;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  
-  .services .icon-box:hover {
-    transform: translateY(-10px);
-  }
-  
-  .services .icon-box:hover h4 a {
-    color: #c26144;
-  }
-  
-  /*--------------------------------------------------------------
-  # Cta
-  --------------------------------------------------------------*/
-  .cta {
-    background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("../img/cta-bg.jpg") fixed center center;
-    background-size: cover;
-    padding: 120px 0;
-  }
-  
-  .cta h3 {
-    color: #fff;
-    font-size: 28px;
-    font-weight: 700;
-  }
-  
-  .cta p {
-    color: #fff;
-  }
-  
-  .cta .cta-btn {
-    font-family: "Jost", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 40px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 10px;
-    border: 2px solid #fff;
-    color: #fff;
-  }
-  
-  .cta .cta-btn:hover {
-    background: #c26144;
-    border: 2px solid #c26144;
-  }
-  
-  @media (max-width: 1024px) {
-    .cta {
-      background-attachment: scroll;
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .cta .cta-btn-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Portfolio
-  --------------------------------------------------------------*/
-  .portfolio #portfolio-flters {
-    list-style: none;
-    margin-bottom: 20px;
-  }
-  
-  .portfolio #portfolio-flters li {
-    cursor: pointer;
-    display: inline-block;
-    margin: 10px 5px;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1;
-    color: #444444;
-    transition: all 0.3s;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .portfolio #portfolio-flters li:hover,
-  .portfolio #portfolio-flters li.filter-active {
-    background: #c26144;
-    color: #fff;
-  }
-  
-  .portfolio .portfolio-item {
-    margin-bottom: 30px;
-  }
-  
-  .portfolio .portfolio-item .portfolio-img {
-    overflow: hidden;
-  }
-  
-  .portfolio .portfolio-item .portfolio-img img {
-    transition: all 0.6s;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info {
-    opacity: 0;
-    position: absolute;
-    left: 15px;
-    bottom: 0;
-    z-index: 3;
-    right: 15px;
-    transition: all 0.3s;
-    background: rgba(55, 81, 126, 0.8);
-    padding: 10px 15px;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info h4 {
-    font-size: 18px;
-    color: #fff;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 0px;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info p {
-    color: #f9fcfe;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info .preview-link,
-  .portfolio .portfolio-item .portfolio-info .details-link {
-    position: absolute;
-    right: 40px;
-    font-size: 24px;
-    top: calc(50% - 18px);
-    color: #fff;
-    transition: 0.3s;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info .preview-link:hover,
-  .portfolio .portfolio-item .portfolio-info .details-link:hover {
-    color: #c26144;
-  }
-  
-  .portfolio .portfolio-item .portfolio-info .details-link {
-    right: 10px;
-  }
-  
-  .portfolio .portfolio-item:hover .portfolio-img img {
-    transform: scale(1.15);
-  }
-  
-  .portfolio .portfolio-item:hover .portfolio-info {
-    opacity: 1;
-  }
-  
-  /*--------------------------------------------------------------
-  # Portfolio Details
-  --------------------------------------------------------------*/
-  .portfolio-details {
-    padding-top: 40px;
-  }
-  
-  .portfolio-details .portfolio-details-slider img {
-    width: 100%;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    opacity: 1;
-    border: 1px solid #c26144;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #c26144;
-  }
-  
-  .portfolio-details .portfolio-info {
-    padding: 30px;
-    box-shadow: 0px 0 30px rgba(55, 81, 126, 0.08);
-  }
-  
-  .portfolio-details .portfolio-info h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .portfolio-details .portfolio-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-  }
-  
-  .portfolio-details .portfolio-info ul li+li {
-    margin-top: 10px;
-  }
-  
-  .portfolio-details .portfolio-description {
-    padding-top: 30px;
-  }
-  
-  .portfolio-details .portfolio-description h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .portfolio-details .portfolio-description p {
-    padding: 0;
-  }
-  
-  /*--------------------------------------------------------------
   # Team
   --------------------------------------------------------------*/
   .team .member {
@@ -2217,185 +1866,6 @@ h6 {
     }
   }
   
-  /*--------------------------------------------------------------
-  # Contact
-  --------------------------------------------------------------*/
-  .contact .info {
-    border-top: 3px solid #c26144;
-    border-bottom: 3px solid #c26144;
-    padding: 30px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact .info i {
-    font-size: 20px;
-    color: #c26144;
-    float: left;
-    width: 44px;
-    height: 44px;
-    background: #e7f5fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .contact .info h4 {
-    padding: 0 0 0 60px;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #e85b31;
-  }
-  
-  .contact .info p {
-    padding: 0 0 10px 60px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #6182ba;
-  }
-  
-  .contact .info .email p {
-    padding-top: 5px;
-  }
-  
-  .contact .info .social-links {
-    padding-left: 60px;
-  }
-  
-  .contact .info .social-links a {
-    font-size: 18px;
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    line-height: 1;
-    padding: 8px 0;
-    border-radius: 50%;
-    text-align: center;
-    width: 36px;
-    height: 36px;
-    transition: 0.3s;
-    margin-right: 10px;
-  }
-  
-  .contact .info .social-links a:hover {
-    background: #c26144;
-    color: #fff;
-  }
-  
-  .contact .info .email:hover i,
-  .contact .info .address:hover i,
-  .contact .info .phone:hover i {
-    background: #c26144;
-    color: #fff;
-  }
-  
-  .contact .php-email-form {
-    width: 100%;
-    border-top: 3px solid #c26144;
-    border-bottom: 3px solid #c26144;
-    padding: 30px;
-    background: #fff;
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-  }
-  
-  .contact .php-email-form .form-group {
-    padding-bottom: 8px;
-  }
-  
-  .contact .php-email-form .validate {
-    display: none;
-    color: red;
-    margin: 0 0 15px 0;
-    font-weight: 400;
-    font-size: 13px;
-  }
-  
-  .contact .php-email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-  }
-  
-  .contact .php-email-form .error-message br+br {
-    margin-top: 25px;
-  }
-  
-  .contact .php-email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-  }
-  
-  .contact .php-email-form .loading {
-    display: none;
-    background: #fff;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .contact .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    animation: animate-loading 1s linear infinite;
-  }
-  
-  .contact .php-email-form .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .contact .php-email-form label {
-    padding-bottom: 8px;
-  }
-  
-  .contact .php-email-form input,
-  .contact .php-email-form textarea {
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 14px;
-    border-radius: 4px;
-  }
-  
-  .contact .php-email-form input:focus,
-  .contact .php-email-form textarea:focus {
-    border-color: #c26144;
-  }
-  
-  .contact .php-email-form input {
-    height: 44px;
-  }
-  
-  .contact .php-email-form textarea {
-    padding: 10px 12px;
-  }
-  
-  .contact .php-email-form button[type=submit] {
-    background: #c26144;
-    border: 0;
-    padding: 12px 34px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
-  }
-  
-  .contact .php-email-form button[type=submit]:hover {
-    background: #209dd8;
-  }
   
   @keyframes animate-loading {
     0% {
@@ -2405,48 +1875,6 @@ h6 {
     100% {
       transform: rotate(360deg);
     }
-  }
-  
-  /*--------------------------------------------------------------
-  # Breadcrumbs
-  --------------------------------------------------------------*/
-  .breadcrumbs {
-    padding: 15px 0;
-    background: #f3f5fa;
-    min-height: 40px;
-    margin-top: 72px;
-  }
-  
-  @media (max-width: 992px) {
-    .breadcrumbs {
-      margin-top: 68px;
-    }
-  }
-  
-  .breadcrumbs h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #e85b31;
-  }
-  
-  .breadcrumbs ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0 0 10px 0;
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .breadcrumbs ol li+li {
-    padding-left: 10px;
-  }
-  
-  .breadcrumbs ol li+li::before {
-    display: inline-block;
-    padding-right: 10px;
-    color: #4668a2;
-    content: "/";
   }
   
   /*--------------------------------------------------------------
@@ -2751,196 +2179,6 @@ h6 {
     font-size: 1em;
   }
   
-  
-  /* Table of Contents
-  /* ------------------------------------------------------------
-  
-  This is a development CSS file which is built to a minified
-  production stylesheet in assets/built/screen.css
-  
-  1.  Global Styles
-  2.  Layout
-  3.  Site Header
-  4.  Site Navigation
-  5.  Post Feed
-  6.  Single Post
-    6.1. Post Byline
-    6.2. Subscribe
-    6.3. Read More
-    6.4. Comments
-  7.  Author Template
-  8.  Tag Template
-  9.  Error Template
-  10.  Site Footer
-  11. Dark Mode
-  
-  */
-  
-  /* 1. Global - Set up the things
-  /* ---------------------------------------------------------- */
-  
-  /* Import CSS reset and base styles */  
-  :root {
-  
-      /* Colours */
-      --color-green: #a4d037;
-      --color-yellow: #fecd35;
-      --color-red: #f05230;
-      --color-darkgrey: #15171A;
-      --color-midgrey: #738a94;
-      --color-lightgrey: #f1f1f1;
-      --color-secondary-text: #979797;
-      --color-border: #e1e1e1;
-      --color-wash: #e5eff5;
-      --color-darkmode: #151719;
-  
-      /*
-      An accent color is also set by Ghost itself in
-      Ghost Admin > Settings > Brand
-  
-      --ghost-accent-color: {value};
-  
-      You can use this variable throughout your styles
-       */
-  
-      /* Fonts */
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-      --font-serif: Georgia, Times, serif;
-      --font-mono: Menlo, Courier, monospace;
-  
-  }
-  
-  
-  /* 2. Layout - Page building blocks
-  /* ---------------------------------------------------------- */
-  
-  .viewport {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-  }
-  
-  .site-content {
-      flex-grow: 1;
-  }
-  
-  /* Full width page blocks */
-  .outer {
-      position: relative;
-      padding: 0 max(4vmin, 20px);
-  }
-  
-  /* Centered content container blocks */
-  .inner {
-      margin: 0 auto;
-      max-width: 1200px;
-      width: 100%;
-  }
-  
-  
-  /* 3. Site Header
-  /* ---------------------------------------------------------- */
-  
-  
-  /* 4. Site Navigation
-  /* ---------------------------------------------------------- */
-  [class*="has_child"] { 
-      position: relative;
-  }
-  
-  [class*="has_child"] a { 
-      font-family: "Druk Text Bold Web",Helvetica,sans-serif;
-      padding: 0 12px;
-      display: inline-block;
-      transition: color .1s,background-color .1s,fill .1s;
-      text-transform: uppercase;
-      columns: #fff;
-  }
-  
-  [class*="has_child"] a::after { 
-      display: inline-block;
-      font-family: bootstrap-icons !important;
-      font-style: normal;
-      font-weight: normal !important;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      vertical-align: -0.125em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\f282";
-      box-sizing: border-box;
-      text-decoration: inherit;
-      font-size: inherit;
-      margin: 0;
-      padding: 0;    
-  }
-  
-   
-  /* Header styles
-  /* ---------------------------------------------------------- */
-  
-  /* Brand
-  /* ---------------------------------------------------------- */
-  
-  
-  /* Primary Navigation
-  /* ---------------------------------------------------------- */
-  /*
-  .gh-head-menu {
-      display: flex;
-      align-items: center;
-      margin-top: 1px;
-      font-weight: 500;
-  }
-  
-  .gh-head-menu .nav {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 32px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-  }
-  
-  .gh-head-menu .nav li {
-      margin: 0;
-      padding: 0;
-  }
-  
-  .gh-head-menu .nav a {
-      display: inline-block;
-      line-height: 1.7;
-      color: inherit;
-  }
-  
-  .gh-head-menu .nav a:hover {
-      opacity: 0.9;
-  }
-  
-  .gh-head-menu .nav-more-toggle {
-      position: relative;
-      width: 30px;
-      height: 30px;
-      margin: 0 -6px;
-      padding: 0;
-      font-size: inherit;
-      background-color: transparent;
-      text-transform: inherit;
-  }
-  
-  .gh-head-menu .nav-more-toggle svg {
-      width: 24px;
-      height: 24px;
-  }
-  
-  @media (min-width: 992px) {
-      body:not(.is-dropdown-loaded) .gh-head-menu .nav > li {
-          opacity: 0;
-      }
-  }
-  */
   
   /* Dropdown
   /* ---------------------------------------------------------- */
@@ -5614,349 +4852,6 @@ production stylesheet in assets/built/screen.css
 }
 
 
-/* 5. Post Feed
-/* ---------------------------------------------------------- */
-
-/*
-.post-feed {
-    position: relative;
-    display: grid;
-    gap: 4.8vmin 4vmin;
-    grid-template-columns: repeat(6, 1fr);
-    padding: max(4.8vmin, 36px) 0 0;
-}
-
-:is(.tag-template, .author-template) .post-feed {
-    margin-top: 4vmin;
-}
-
-@media (max-width: 991px) {
-    .post-feed {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 767px) {
-    .post-feed {
-        grid-template-columns: 1fr;
-        grid-gap: 40px;
-    }
-}
-
-.post-card {
-    position: relative;
-    grid-column: span 2;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    word-break: break-word;
-}
-
-.post-card-image-link {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin-bottom: 32px;
-}
-
-.post-card-image-link::after {
-    content: "";
-    display: block;
-    padding-bottom: 55%;
-}
-
-.post-card[class*="post-access-"] .post-card-image-link::after {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-}
-
-.post-card.keep-ratio[class*="post-access-"] .post-card-image-link::after {
-    position: absolute;
-    inset: 0;
-    padding-bottom: 0;
-}
-
-.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
-    padding-bottom: 0;
-}
-
-.post-card-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-lightgrey) no-repeat center center;
-    object-fit: cover;
-}
-
-.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
-    position: static;
-}
-
-.post-card-access {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-}
-
-.post-card-content-link {
-    position: relative;
-    display: block;
-    color: var(--color-darkgrey);
-}
-
-.post-card-content-link:hover {
-    text-decoration: none;
-}
-
-.post-feed .no-image .post-card-content-link {
-    padding: 0;
-}
-
-.no-image .post-card-header {
-    margin-top: 0;
-}
-
-.post-card-tags {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 10px;
-    color: var(--color-secondary-text);
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: -0.005em;
-    line-height: 1;
-}
-
-.post-card-featured {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    padding-left: 18px;
-    color: var(--ghost-accent-color);
-}
-
-.post-card-featured svg {
-    position: absolute;
-    left: 0;
-}
-
-.post-card-title {
-    margin: 0;
-    font-size: 2.6rem;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.post-card-content-link:hover .post-card-title {
-    opacity: 0.9;
-}
-
-.no-image .post-card-title {
-    margin-top: 0;
-}
-
-.has-serif-title .post-card-title {
-    font-family: var(--font-serif);
-    letter-spacing: -0.005em;
-}
-
-.post-card-title svg {
-    margin-top: -3px;
-    margin-left: -1px;
-}
-
-.post-card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.post-card-excerpt {
-    display: -webkit-box;
-    overflow-y: hidden;
-    margin-top: 12px;
-    max-width: 720px;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
-}
-
-.has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans);
-}
-
-.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
-    -webkit-line-clamp: 2;
-}
-
-:is(.tag-template, .author-template) .post-card-excerpt {
-    margin-top: 6px;
-}
-
-.post-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 12px;
-    padding: 0;
-    font-size: 1.3rem;
-    color: var(--color-secondary-text);
-}
-
-.post-card-meta > * {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.post-card-meta > * + *:not(script)::before {
-    width: 2px;
-    height: 2px;
-    content: "";
-    background-color: var(--color-secondary-text);
-    border-radius: 50%;
-}
-
-.post-card-meta .sep {
-    margin: 0 4px;
-}
-
-.author-profile-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: color-mod(var(--color-lightgrey) l(+10%));
-    border-radius: 100%;
-
-    object-fit: cover;
-}
-
-.author-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 0 4px;
-    padding: 0;
-    list-style: none;
-}
-
-.author-list-item {
-    position: relative;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
-}
-
-*/
-/* Special Styling for home page grid (below):
-
-The first post in the list is styled to be bigger than the others and take over
-the full width of the grid to give it more emphasis. Wrapped in a media query to
-make sure this only happens on large viewports / desktop-ish devices.
-
-*/
-
-/*
-@media (min-width: 1001px) {
-    .post-card-large {
-        grid-column: span 6;
-        display: grid;
-        grid-gap: 4vmin;
-        grid-template-columns: repeat(3, 1fr);
-        border-top: 0;
-    }
-
-    .post-card-large:not(.no-image) .post-card-header {
-        margin-top: 0;
-    }
-
-    .post-card-large .post-card-image-link {
-        position: relative;
-        grid-column: span 2;
-        margin-bottom: 0;
-    }
-
-    .post-card-large .post-card-content {
-        grid-column: span 1;
-    }
-
-    .post-card-large.no-image .post-card-content {
-        grid-column: span 2;
-    }
-
-    .post-card-large .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .post-card-large .post-card-tags {
-        margin-bottom: 12px;
-    }
-
-    .post-card-large .post-card-title {
-        margin-top: 0;
-        font-size: 4.4rem;
-        line-height: 1.05;
-    }
-
-    .post-card-large .post-card-excerpt {
-        margin-top: 16px;
-    }
-
-    .post-card-full {
-        grid-column: span 6;
-    }
-
-    .post-card-full .post-card-image-link {
-        margin-bottom: 40px;
-    }
-
-    .post-card-full .post-card-tags {
-        margin-bottom: 14px;
-    }
-
-    .post-card-full .post-card-title {
-        font-size: 6.4rem;
-        line-height: 0.95;
-    }
-
-    .post-card-full .post-card-excerpt {
-        margin-top: 20px;
-        font-size: 1.8rem;
-    }
-
-    .post-card-large + .post-card-large:nth-child(even) {
-        margin: 32px 0;
-    }
-
-    .post-card-large + .post-card-large:nth-child(even) .post-card-content {
-        order: -1;
-    }
-
-    .post-card.dynamic {
-        grid-column: span 3;
-    }
-
-    .post-card.dynamic .post-card-title {
-        font-size: 3rem;
-    }
-}
-*/
-/* Pagination
-/* ---------------------------------------------------------- */
-
 .pagination {
     display: none;
     grid-template-columns: 1fr auto 1fr;
@@ -6067,32 +4962,6 @@ html.no-infinite-scroll .pagination {
     }
 }
 
-/* -------- */
-
-/* Content grid
-/* ---------------------------------------------------------- */
-
-/* Canvas creates a multi-column, centered grid which the post
-is laid out on top of. Canvas just defines the grid, we don't
-use it for applying any other styles. */
-/*
-.gh-canvas {
-    display: grid;
-    grid-template-columns:
-        [full-start]
-        minmax(max(4vmin, 20px), auto)
-            [wide-start]
-            minmax(auto, 240px)
-                [main-start]
-                    min(720px, calc(100% - max(8vmin, 40px)))
-                [main-end]
-            minmax(auto, 240px)
-            [wide-end]
-        minmax(max(4vmin, 20px), auto)
-        [full-end]
-    ;
-}
-*/
 .gh-canvas > * {
     grid-column: main-start / main-end;
 }
@@ -6108,14 +4977,6 @@ use it for applying any other styles. */
 .kg-width-full img {
     width: 100%;
 }
-
-
-/* Content
-/* ---------------------------------------------------------- */
-
-/* Content refers to styling all page and post content that is
-created within the Ghost editor. The main content handles
-headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
 .gh-content > * + * {
@@ -7406,8 +6267,9 @@ html.dark-mode .footer-cta-title {
     display: none;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+
     body {
         overflow-x: hidden;
         height: 100vh;
@@ -7517,21 +6379,12 @@ html.dark-mode .footer-cta-title {
     #header .logo-wrapper {
         right: 5px;
         top: 5px;
-        transform: none
+        transform: none;
+        left: auto;
     }
 
     .navbar-toggler {
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
-    
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-    
+    }    
 }
 
 
