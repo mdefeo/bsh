@@ -15,7 +15,7 @@ into the {body} tag of the default.hbs template --}}
         <h1 class="article-title">{{title}}</h1>
 
         {{#if custom_excerpt}}
-            <p class="article-excerpt">{{custom_excerpt}}</p>
+            <p class="article-excerpt p-dek">{{custom_excerpt}}</p>
         {{/if}}
 
         <div class="article-byline">
@@ -55,9 +55,6 @@ into the {body} tag of the default.hbs template --}}
                             <span class="c-byline__item post-card-featured">{{> "icons/fire"}} Featured</span>
                         {{/if}}
                     </span>
-
-
-
                 </div>
             </div>
 
@@ -88,6 +85,7 @@ into the {body} tag of the default.hbs template --}}
     </header>
 
     <section class="gh-content gh-canvas">
+        {{> share-block}}
         {{content}}
     </section>
 
