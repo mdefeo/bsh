@@ -774,7 +774,6 @@ h6 {
     top: 50%;
     transform: translate(-17%,-50%);
     z-index: 500;
-    left: 50px
   }
   
   #header .logo-wrapper span {
@@ -6273,6 +6272,12 @@ html.dark-mode .footer-cta-title {
     display: none;
 }
 
+@media only screen and (max-width: 1300px) {
+    #header .logo-wrapper {
+        left: 50px;
+    }
+}
+
 @media only screen and (max-width: 991px) {
 
     body {
@@ -6288,6 +6293,10 @@ html.dark-mode .footer-cta-title {
     #header {
         top: 0;
         margin-bottom: 40px;
+    }
+
+    #header .logo-wrapper {
+        left: auto
     }
 
     #header .logo-wrapper span {
@@ -6485,4 +6494,8 @@ html.dark-mode .footer-cta-title {
 
 .gh-head-link.gh-portal-close i:before {
     font-size: 18px;
+}
+
+.tag-posts section {
+    padding: 20px 0
 }

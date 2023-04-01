@@ -1,78 +1,9 @@
 routes:
   /: home
-  /authors/:
-    permalink: /authors/
+  /about/:
+    permalink: /about/
     template: authors
 
-
-collections:
-  /:
-    permalink: /{primary_tag}/{slug}/
-    template: news
-    
-  /news/:
-    permalink: /news/{slug}/
-    template: news
-    filter: primary_tag:news
-  /morning-fly-by/:
-    permalink: /morning-fly-by/{slug}/
-    template: news
-    filter: primary_tag:morning-fly-by
-  /prospect-report/:
-    permalink: /prospect-report/{slug}/
-    template: news
-    filter: primary_tag:prospect-report
-  /news-reports/:
-    permalink: /news-reports/{slug}/
-    template: news
-    filter: primary_tag:news-reports
-
-  /games/:
-    permalink: /games/{slug}/
-    template: news
-    filter: primary_tag:games
-  /game-threads/:
-    permalink: /game-threads/{slug}/
-    template: news
-    filter: primary_tag:game-threads
-  /previews/:
-    permalink: /previews/{slug}/
-    template: news
-    filter: primary_tag:previews
-  /recaps/:
-    permalink: /recaps/{slug}/
-    template: autho
-    filter: primary_tag:recaps 
-
-
-  /features/:
-    permalink: /features/{slug}/
-    template: news
-    filter: primary_tag:features
-  /flyers/:
-    permalink: /flyers/{slug}/
-    template: news
-    filter: primary_tag:flyers
-  /prospects/:
-    permalink: /prospects/{slug}/
-    template: news
-    filter: primary_tag:prospects
-  /everything-is-sports/:
-    permalink: /everything-is-sports/{slug}/
-    template: news
-    filter: primary_tag:everything-is-sports
-
-
-  /podcasts/:
-    permalink: /podcasts/{slug}/
-    template: news
-    filter: primary_tag:podcasts
-  /bsh-radio/:
-    permalink: /bsh-radio/{slug}/
-    template: news
-    filter: primary_tag:bsh-radio
-  /flyperbole/:
-    permalink: /flyperbole/{slug}/
-    template: news
-    filter: primary_tag:flyperbole
-
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
