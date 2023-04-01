@@ -1,5 +1,8 @@
 routes:
   /: home
+  /authors/:
+    permalink: /authors/
+    template: authors
 
 collections:
   /news/:
@@ -67,3 +70,4 @@ collections:
     permalink: /flyperbole/{slug}/
     template: news
     filter: primary_tag:flyperbole
+

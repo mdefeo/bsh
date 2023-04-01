@@ -9,7 +9,6 @@
     </header>
 
     {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
-
       <div class="post-feed">
         {{#foreach authors}}
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
@@ -28,31 +27,6 @@
               </div>
             </article>
           </div>
-        {{/foreach}}
-      </div>
-
-
-
-
-
-        {{#foreach authors}}
-          <article class="post-card {{#unless profile_image}} no-image{{/unless}}">
-            {{#if profile_image}}
-              <a class="post-card-image-link" href="{{url}}">
-                <div class="post-card-image" style="background-image: url({{profile_image}})"></div>
-              </a>
-            {{/if}}
-            <div class="post-card-content">
-              <a class="post-card-content-link" href="{{url}}">
-                <header class="post-card-header">
-                  <h2 class="post-card-title">{{name}}</h2>
-                </header>
-                <section class="post-card-excerpt">
-                  <p>{{bio}}</p>
-                </section>
-              </a>
-            </div>
-          </article>
         {{/foreach}}
       </div>
     {{/get}}

@@ -2592,6 +2592,10 @@ h6 {
     text-decoration: none;
     color: #fff;
   }
+
+  #footer .footer-top .social-links .social-icons {
+    display: inline-flex;
+  }
   
   #footer .footer-top .social-links a {
     font-size: 18px;

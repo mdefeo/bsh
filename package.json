@@ -19,9 +19,7 @@
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release",
-        "start": "ghost start",
-        "stop": "ghost stop"
+        "postship": "git fetch && gulp release"
     },
     "author": {
         "name": "Marcello De Feo",
@@ -43,9 +41,9 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/mdefeo/broadstreethockey.com.git"
+        "url": "https://github.com/mdefeo/bsh.git"
     },
-    "bugs": "https://github.com/mdefeo/broadstreethockey.com/issues",
+    "bugs": "https://github.com/mdefeo/bsh/issues",
     "devDependencies": {
         "@babel/core": "^7.21.3",
         "@babel/preset-env": "^7.20.2",
@@ -184,11 +182,6 @@
                     "Hidden"
                 ],
                 "default": "Wide",
-                "group": "post"
-            },
-            "show_recent_posts_footer": {
-                "type": "boolean",
-                "default": true,
                 "group": "post"
             }
         }

@@ -1,6 +1,6 @@
 {{!< default}}
 
-{{#get 'posts' filter='tag:-[hero-bottom-right, hero-bottom-left, hero-top-right, hero-top-left, hero-big-feature]' include="authors" }}
+{{#get 'posts' filter='tag:-[hero-bottom-right, hero-bottom-left, hero-top-right, hero-top-left, hero-big-feature]' with="authors" }}
 {{#foreach posts }}
 
   {{> "post-card"}}
