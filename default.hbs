@@ -153,50 +153,13 @@
 
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{asset "built/init.js"}}"></script>
 
 <div class="c-related-list__video">
     <div class="c-video-embed--media">
-        <iframe frameborder="no" src="https://playlist.megaphone.fm?p=VMP3107255052&amp;light=true" width="100%" height="482"></iframe>
+        <iframe src="https://podcasters.spotify.com/pod/show/broad-street-hockey/embed/episodes/Flyperbole-Ep--308-A-Farewell-to-Coates-e21fdl4" height="482px" width="100%" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script type="text/javascript">
-var HYVOR_TALK_WEBSITE = '8652',
-    HYVOR_TALK_CONFIG = {
-        url: false,
-        id: "{{comment_id}}"
-    };
-
-{{#if @member}}
-var userData = {
-    id: "{{ @member.uuid }}",
-    name: "{{ @member.name}}",
-    email: "{{ @member.email}}",
-};
-{{else}}
-var userData = {};
-{{/if}}
-
-userData = btoa( JSON.stringify( userData ) )
-var hash = CryptoJS.HmacSHA1(userData, '988bf47f56422d08b140ac8ae1142aff').toString();
-HYVOR_TALK_CONFIG.sso = {
-    hash: hash,
-    userData: userData,
-    loginURL: location.href + "#/portal/login",
-    signupURL: location.href + "#/portal/signup"
-}
-var script = document.createElement("script");
-script.src = "//talk.hyvor.com/web-api/embed.js";
-script.async = true;
-document.body.appendChild(script);
-
-</script>
-<script async type="text/javascript" src="//talk.hyvor.com/web-api/count/"></script>
-
-
+</div>  
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
