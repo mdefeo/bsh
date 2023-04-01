@@ -10,61 +10,71 @@
         {{/foreach}}
     </ul>
 {{else}}
-    <ul>
-        <li class="dropdown"><a href="#"><span>News</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="/morning-fly-by">Morning Fly By</a></li>
-                <li><a href="/prospect-report">Prospect Report</a></li>
-                <li><a href="/news-reports">News Reports</a></li>
-            </ul>
-        </li>
-        <li class="dropdown"><a href="#"><span>Games</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="/game-threads">Game Threads</a></li>
-                <li><a href="/previews">Previews</a></li>
-                <li><a href="/recaps">Recaps</a></li>
-            </ul>
-        </li>
-        <li class="dropdown"><a href="#"><span>Features</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="/flyers">Flyers</a></li>
-                <li><a href="/prospects">Prospects</a></li>
-                <li><a href="/sports-betting">Sports Betting</a></li>
-                <li><a href="/everything-is-sports">Everything Is Sports</a></li>
-            </ul>
-        </li>
-        <li class="dropdown"><a href="#"><span>Podcasts</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="/bsh-radio">BSH Radio</a></li>
-                <li><a href="/flyperbole">Flyperbole</a></li>
-            </ul>
-        </li>
-        <li><a class="" href="/bsh-store">BSH Store</a></li>
-    </ul>
-    <ul>
-        <div class="gh-head-actions text-right align-right">
-            {{#unless @site.members_enabled}}Hello
-                {{^match @custom.navigation_layout "Stacked"}}
-                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                {{/match}}
-            {{else}}
-                <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                <div class="gh-head-members">
-                    {{#unless @member}}
-                        {{#unless @site.members_invite_only}}
-                            <a class="gh-head-link" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
-                            <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                        {{else}}
-                            <a class="gh-head-button" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
-                        {{/unless}}
-                    {{else}}
-                        <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
-                    {{/unless}}
-                </div>
-            {{/unless}}
-        </div>        
-    </ul>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bshNavBar" aria-controls="bshNavBar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="bshNavBar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li><a class="nav-link mobile-only" href="/">Home</a></li>
+            <li class="nav-item dropdown"><a id="newsDropDown" class="nav-link dropdown-toggle" href="#">News</a>
+                <ul class="dropdown-menu" aria-labelledby="newsDropDown">
+                    <li><a class="dropdown-item" href="/morning-fly-by">Morning Fly By</a></li>
+                    <li><a class="dropdown-item" href="/prospect-report">Prospect Report</a></li>
+                    <li><a class="dropdown-item" href="/news-reports">News Reports</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><a id="gamesDropDown" class="nav-link dropdown-toggle" href="#">Games</a>
+                <ul class="dropdown-menu" aria-labelledby="gamesDropDown">
+                    <li><a class="dropdown-item" href="/game-threads">Game Threads</a></li>
+                    <li><a class="dropdown-item" href="/previews">Previews</a></li>
+                    <li><a class="dropdown-item" href="/recaps">Recaps</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><a id="featuresDropDown" class="nav-link dropdown-toggle" href="#">Features</a>
+                <ul class="dropdown-menu" aria-labelledby="featuresDropDown">
+                    <li><a class="dropdown-item" href="/flyers">Flyers</a></li>
+                    <li><a class="dropdown-item" href="/prospects">Prospects</a></li>
+                    <li><a class="dropdown-item" href="/sports-betting">Sports Betting</a></li>
+                    <li><a class="dropdown-item" href="/everything-is-sports">Everything Is Sports</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><a d="podcastsDropDown" class="nav-link dropdown-toggle" href="#">Podcasts</a>
+                <ul class="dropdown-menu" aria-labelledby="podcastsDropDown">
+                    <li><a class="dropdown-item" class="dropdown-item" href="/bsh-radio">BSH Radio</a></li>
+                    <li><a class="dropdown-item" class="dropdown-item" href="/flyperbole">Flyperbole</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-link" href="/bsh-store">BSH Store</a></li>
+        </ul>
+        <ul class="hide-mobile">
+            <div class="gh-head-actions text-right align-right">
+                {{#unless @site.members_enabled}}Hello
+                    {{^match @custom.navigation_layout "Stacked"}}
+                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{else}}
+                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    <div class="gh-head-members">
+                        {{#unless @member}}
+                            {{#unless @site.members_invite_only}}
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
+                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                            {{else}}
+                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin"><i class="fa fa-user">Sign In</i></a>
+                            {{/unless}}
+                        {{else}}
+                            <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                        {{/unless}}
+                    </div>
+                {{/unless}}
+            </div>        
+        </ul>
+        </div>
+    </div>
+</nav>
 {{!--  
     <div class="c-global-header__links">
         <ul class="nav" role="menu">

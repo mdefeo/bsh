@@ -32,30 +32,27 @@
 <main>
 
     <header id="header" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
-        <div class="container d-flex align-items-center gh-head-inner inner">
-            
-            <nav id="navbar" class="navbar gh-head-menu">
-                <div class="logo-wrapper">
-                    <a class="logo me-auto gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                            <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
-                        {{else}}
-                            {{@site.title}}
-                        {{/if}}
-                    </a>
-                    <span>Friends don’t let friends experience Flyers hockey alone</span>
-                </div>
-                {{navigation}}
-                {{#unless @site.members_enabled}}
-                    {{#match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{/unless}}
-                <div class="gh-head-brand">
-                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    <button class="gh-burger"></button>
-                </div>
-            </nav>    
+        <div class="container d-flex align-items-center gh-head-inner inner">            
+            <div class="logo-wrapper">
+                <a class="navbar-brand logo me-auto gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" class="img-fluid">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <span>Friends don’t let friends experience Flyers hockey alone</span>
+            </div>
+            {{navigation}}
+            {{#unless @site.members_enabled}}
+                {{#match @custom.navigation_layout "Stacked"}}
+                    <button class="gh-search gh-icon-btn hide-mobile" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                {{/match}}
+            {{/unless}}
+            <div class="gh-head-brand hide-mobile">
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                <button class="gh-burger"></button>
+            </div>
         </div>
     </header>
 
