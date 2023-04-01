@@ -4,7 +4,12 @@ routes:
     permalink: /authors/
     template: authors
 
+
 collections:
+  /:
+    permalink: /{primary_tag}/{slug}/
+    template: news
+    
   /news/:
     permalink: /news/{slug}/
     template: news
@@ -36,7 +41,7 @@ collections:
     filter: primary_tag:previews
   /recaps/:
     permalink: /recaps/{slug}/
-    template: news
+    template: autho
     filter: primary_tag:recaps 
 
 

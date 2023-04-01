@@ -1,23 +1,25 @@
 {{!< default}}
 
-{{#post}}
+<section id="team" class="team">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Masthead</h2>
+    </div>
 
-<main id="site-main" class="site-main outer" role="main">
-  <div class="inner">
-    <header class="post-full-header">
-      <h1 class="post-full-title">{{title}}</h1>
-    </header>
-
-    {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+    <div class="row"> 
+      {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
       <div class="post-feed">
         {{#foreach authors}}
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <article class="member d-flex align-items-start post-card {{#unless profile_image}} no-image{{/unless}}">
+          <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
               {{#if profile_image}}
-              <div class="pic"><img src="{{profile_image}}" class="img-fluid" alt=""></div>
+              <div class="pic">
+                <a class="post-card-image-link" href="{{slug}}">
+                  <img src="{{profile_image}}" class="img-fluid" alt="{{name}}"></div>
+                </a>
               {{/if}}
               <div class="member-info">
-                <h4><a class="post-card-content-link" href="{{url}}">{{name}}</a></h4>
+                <h4>{{name}}</h4>
                 <span>{{location}}</span>
                 <p>{{bio}}</p>
                 <div class="social">
@@ -25,12 +27,10 @@
                   <a href="{{facebook}}"><i class="ri-facebook-fill"></i></a>
                 </div>
               </div>
-            </article>
           </div>
+        </div>
         {{/foreach}}
+      {{/get}}
       </div>
-    {{/get}}
   </div>
-</main>
-
-{{/post}}
+</section>
