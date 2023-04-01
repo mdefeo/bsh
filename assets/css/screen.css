@@ -1396,7 +1396,7 @@ h6 {
   .latest-content h2 {
     text-align: left;
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.75em;
     font-weight: normal;
   }
   
@@ -1440,6 +1440,11 @@ h6 {
     font-size: .75em;
     color: #666666;
     margin-top: 10px;
+  }
+
+  .post .p-dek {
+    margin-top: 0;
+    font-size: .9em;
   }
   
   .post .c-byline__item a {
