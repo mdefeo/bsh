@@ -1197,6 +1197,10 @@ h6 {
     padding: 60px 0;
     overflow: hidden;
   }
+
+  section {
+    padding: 0 0 20px;
+  }
   
   .section-bg {
     background-color: #f3f5fa;
@@ -1204,17 +1208,14 @@ h6 {
   
   .section-title {
     text-align: center;
-    padding-bottom: 30px;
   }
   
   .section-title h2 {
     font-size: 32px;
     font-weight: bold;
-    text-transform: uppercase;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     position: relative;
-    color: #e85b31;
   }
   
   .section-title h2::before {
@@ -1269,6 +1270,9 @@ h6 {
   .c-entry-box--compact__image-wrapper {
     position: relative;
     width: 30%;
+  }
+  .hero-post .c-entry-box--compact__image-wrapper {
+    width: 50%;
   }
   
   .c-entry-box--compact .c-dynamic-image, .c-entry-box--compact .c-entry-box--compact__image, .c-entry-box--compact .c-picture {
@@ -6330,6 +6334,7 @@ html.dark-mode .footer-cta-title {
         padding: 20px 0;
     }
 
+
     .hide-mobile {
         display: none !important;
     }
@@ -6454,7 +6459,7 @@ html.dark-mode .footer-cta-title {
 }
 
 .share-block {
-    margin-top: 8rem;
+    margin-top: 0;
     text-align: left;
 }
 .share-block span {
