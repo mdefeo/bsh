@@ -6504,3 +6504,7 @@ html.dark-mode .footer-cta-title {
 .tag-posts section {
     padding: 20px 0
 }
+
+.post .article-header .section-title h2 {
+    margin-top: 20px;
+}
