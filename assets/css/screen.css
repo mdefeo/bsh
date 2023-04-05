@@ -1264,9 +1264,8 @@ h6 {
   .c-river-section-title+.c-compact-river .c-compact-river__entry:first-of-type .c-entry-box--compact:not(.c-entry-box--compact--featured)>* {
     padding-top: 0;
   }
-  .c-compact-river__entry .c-entry-box--compact__image-wrapper {
+  .c-entry-box--compact__image-wrapper {
     position: relative;
-    width: 25%;
   }
   .hero-post .c-entry-box--compact__image-wrapper {
     width: 50%;
