@@ -47,7 +47,6 @@ which templates loop over to generate a list of posts. --}}
                         {{title}}
                     </h2>
                 </header>
-                {{> share-block}}
                 {{#if excerpt}}
                     <div class="p-dek c-entry-box--compact__dek">{{excerpt}}</div>
                 {{/if}}
@@ -91,6 +90,7 @@ which templates loop over to generate a list of posts. --}}
                     </section>
                 {{/if}}
             </footer>
+            {{> share-block}}
 
         </div>
 

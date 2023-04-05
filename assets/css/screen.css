@@ -2185,7 +2185,7 @@ h6 {
   }
   
   .hero-post .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__dek, .c-entry-box--compact:not(.c-entry-box--compact--hero):not(.c-entry-box--compact--featured) .c-entry-box--compact__fanshot-content__description {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   
   
