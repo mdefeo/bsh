@@ -1266,7 +1266,7 @@ h6 {
   }
   .c-entry-box--compact__image-wrapper {
     position: relative;
-    width: 30%;
+    width: 25%;
   }
   .hero-post .c-entry-box--compact__image-wrapper {
     width: 50%;
@@ -1386,7 +1386,7 @@ h6 {
     padding: 16px;
     flex-grow: 1;
     padding: 0 8px;
-    width: 70%;
+    width: 75%;
     padding: 16px;
   }
   
