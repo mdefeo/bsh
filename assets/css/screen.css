@@ -1245,9 +1245,6 @@ h6 {
   }
   
   
-  
-  
-  
   .c-compact-river__entry:first-of-type, .c-river-section-title+.c-compact-river .c-compact-river__entry:first-of-type {
     border-top: 0;
   }
@@ -2160,6 +2157,7 @@ h6 {
   
   .p-rock-head.c-rock-list__title {
     font-weight: 800;
+    margin-top: .1em
   }
   
   .navbar li+li {
@@ -6322,7 +6320,7 @@ html.dark-mode .footer-cta-title {
         display: none;
     }
     
-    .c-entry-box--compact, .c-entry-box--compact__image-wrapper, .c-entry-box--compact__body {
+    .c-entry-box--compact, .c-entry-box--compact__image-wrapper, .c-entry-box--compact__body, .hero-post .c-entry-box--compact__image-wrapper {
         display: block;
         width: 100%;
     }
@@ -6454,7 +6452,7 @@ html.dark-mode .footer-cta-title {
 }
 
 .hero-post {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     margin-bottom: 0;
 }
 
