@@ -6508,3 +6508,22 @@ html.dark-mode .footer-cta-title {
 .post .article-header .section-title h2 {
     margin-top: 20px;
 }
+
+.home-template .share-block span {
+    display: none;
+}
+
+.home-template .share-block a {
+    margin: 0 0 20px 0
+}
+
+.home-template .share-block a svg {
+    width: 16px;
+    filter: brightness(0%);
+    opacity: .5;
+    margin-bottom: 10px;
+}
+
+.home-template .share-block a:hover svg {
+    opacity: 1;
+}
