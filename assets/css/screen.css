@@ -6459,7 +6459,7 @@ html.dark-mode .footer-cta-title {
 }
 
 .share-block {
-    margin-top: 20px;
+    margin-top: 0;
     text-align: left;
 }
 .share-block span {
